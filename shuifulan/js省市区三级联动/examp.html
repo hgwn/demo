@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript" src="js/examp.js"></script>
+	<!--
+	<script type="text/javascript" src="js/AreaInfo.js"></script>
+-->
+	<script type="text/javascript">
+		window.onload=function(){
+			showprovinces();
+			tet();
+		}
+		//获取省市区值
+		function tet(){
+			var btn = document.getElementById("btn");
+			btn.onclick=function(){
+				alert(option_text("province")+option_text("city")+option_text("town"));
+				//alert(citys instanceof Object);
+				return false;
+				//document.getElementsByTagName("form")[0].submit();
+			}
+		}
+		
+		//获取每个select中选中的值
+		function option_text(id){
+			var index = document.getElementById(id).selectedIndex;  //selectedIndex代表的是你所选中项的index 
+			if(document.getElementById(id).getElementsByTagName("option")[0]){ //判断是否有option元素
+				//alert("有");
+				var op_text = document.getElementById(id).options[index].text; //拿到选中项options的text
+				return op_text;
+			} else{
+				//alert("无");
+				return "";
+			}
+		}
+		//显示省（自治区、直辖市）
+		function showprovinces()
+		{
+			var opt,provinces_name,provinces_code;
+			for(var i=0; i<provinces.length; i++)  //循环数组 provinces
+			{
+				provinces_name=provinces[i];
+				provinces_code=citys[provinces_name][0]["cityid"];
+				opt = document.createElement("option");
+				opt.value = provinces_code;
+				opt.text = provinces_name;
+				document.getElementById("province").add(opt); //add() 方法用于向 <select> 添加一个 <option> 元素
+			}
+		}
+		//省  onchange select_city()函数
+		function select_city()
+		{
+			//清空地级市
+			var opt;
+			var selectOptions_city=document.all.city.options;
+			var i;
+			for(i=selectOptions_city.length-1;i>=0;i--)
+			{
+				document.all.city.options.remove(i);  
+			}
+
+			//清空县(区)
+			var selectOptions_town=document.all.town.options;
+			for(i=selectOptions_town.length-1;i>=0;i--)
+			{
+				document.all.town.options.remove(i); 
+			}
+
+			//获取省级下拉选中的值
+			var province,city_name,city_code;
+			var selectOptions_province = document.all.province.options;  //获取省 所有的option
+			for(i=selectOptions_province.length-1;i>=0;i--)
+			{
+				if(document.all.province.options[i].selected==true)
+				{
+					province=document.all.province.options[i].text;
+					 //alert(province);
+					// document.getElementById("s1").setAttribute("value",province);
+				}
+			}
+
+			//关联 市
+			for(i=1; i<citys[province].length; i++)  //取 该省下的第一个所有市 的数组对象,如，北京市》市辖区、县
+			{
+				for(var key in citys[province][i]) // 循环 北京市 市辖区下的数组
+				{
+					city_name=citys[province][i][key][0]["cityname"];
+					city_code=citys[province][i][key][0]["cityid"];
+					opt = document.createElement("option");
+					opt.value = city_code;
+					opt.text = city_name;
+					document.getElementById("city").add(opt); //追加到市级
+				}
+			}
+			//自动再关联县级
+			for(var key in citys[province][1])
+			{
+				for(i=1; i<citys[province][1][key].length; i++)
+				{
+					city_name=citys[province][1][key][i]["cityname"];
+					city_code=citys[province][1][key][i]["cityid"];
+					opt = document.createElement("option");
+					opt.value = city_code;
+					opt.text = city_name;
+					document.getElementById("town").add(opt); //追加到县级
+				}
+			}
+		}
+		//区、镇 select_town()函数
+		function select_town()
+		{	
+			//清空县区
+			var opt;
+			var selectOption_town=document.all.town.options;
+			var i;
+			for(i=selectOption_town.length-1;i>=0;i--)  // for (i=0; i<selectOptions.length-1;i++)
+			{
+				document.all.town.options.remove(i);
+			}
+
+			//获取省级下拉选中的值
+			var province,cityid,city_name,city_code;
+			var selectOptions_province=document.all.province.options; //获取省 所有的option
+			for(i=selectOptions_province.length-1;i>=0;i--)
+			{
+				if(document.all.province.options[i].selected==true)
+				{
+					province=document.all.province.options[i].text; 
+				}
+			}
+
+			//获取市级下拉选中的值
+			var selectOptions_city=document.all.city.options; //获取市 所有的option
+			for(i=selectOptions_city.length-1;i>=0;i--)
+			{
+				if(document.all.city.options[i].selected==true)
+				{
+					cityid=document.all.city.options[i].text;
+				}
+			}
+
+			//关联县
+			var city_name,city_code;
+			for(i=1; i<citys[province].length; i++) //取 该省下的第一个所有市 的数组对象,如，北京市》市辖区、县
+			{
+				for(var key in citys[province][i])
+				{
+					city_name=citys[province][i][key][0]["cityname"];
+					if(city_name==cityid)
+					{
+						for(var j=1; j<citys[province][i][key].length; j++)
+						{
+							city_name=citys[province][i][key][j]["cityname"];
+							city_code=citys[province][i][key][j]["cityid"];
+							opt = document.createElement("option");
+							opt.value = city_code;
+							opt.text = city_name;
+							document.getElementById("town").add(opt); //追加到县级
+						}
+					}
+				}
+			}
+		}
+		
+	</script>
+	<style type="text/css">
+		#province,#city,#town{width: 180px;}
+	</style>
+</head>
+<body>
+<form action="http://baidu.com">
+	<select id="province" name="province" onchange="select_city()">
+        <option value="110000">省(自治区、直辖市)</option>
+    </select>
+    <select id="city" name="city" onchange="select_town()">
+        <option value="">地级市</option>
+    </select>
+    <select id="town" name="town">
+        <option value="">县(区)</option>
+    </select>
+	<input id="btn" type="submit" value="提交" />
+	<!-- <a id="btn">按钮</a> -->
+</form>
+<noscript>本页面需要浏览器支持（启用）javascript!</noscript>	 
+</body>
+</html>

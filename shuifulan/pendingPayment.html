@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="font.css">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/geo.js"></script>
+	<script type="text/javascript" src="js/wx.js"></script>
+</head>
+<body>
+	<!-- start wrap -->
+	<div id="wrap">
+		<!--start header -->
+		<div id="header">
+			<h3 class="detail-title fontColor-orange">待付款</h3>
+			<a class="back" href="javascript:history.go(-1);"><i class="icon-reply"></i><span>返回</span></a>
+		</div>
+		<!-- end header -->
+		<!-- start main -->
+		<div id="main" class="pd4rem">
+			<!-- pendingPayment-form stant -->
+			<form id="pendingPayment-form" action="pay.html" class="pure-form">
+				<!--pendingPayment-box start  -->
+				<div class="pendingPayment-box">
+					<div class="pendingPayment-order">
+						<div>订单号:<span>2015051417194026719618</span></div>
+						<div>时间:<span>2015-05-14 17:19:40</span></div>
+						<span class="pendingPayment-stat">待付款</span>
+					</div>
+					<ul class="pendingPayment-goods">
+						<li class="clearfix">
+							<div class="wd30">
+								<div class="pd5"><img src="images/goods1.jpg" alt=""></div>
+							</div>
+							<div class="wd70">
+								<p class="pendingPayment-name" id="para">水肤兰滋养嫩白洁肤乳</p>
+								<script type="text/javascript">
+									alert(document.getElementById("para").firstChild.nodeValue);
+								</script>
+								<p class="pendingPayment-price">单价:<span class="pend-number">¥<em>168.00</em></span></p>
+								<p class="pendingPayment-num">数量:<span>1</span></p>
+							</div>
+						</li>
+						<li class="clearfix">
+							<div class="wd30">
+								<div class="pd5"><img src="images/goods1.jpg" alt=""></div>
+							</div>
+							<div class="wd70">
+								<p class="pendingPayment-name">水肤兰滋养嫩白洁肤乳</p>
+								<p class="pendingPayment-price">单价:<span class="pend-number">¥<em>168.00</em></span></p>
+								<p class="pendingPayment-num">数量:<span>1</span></p>
+							</div>
+						</li>
+					</ul>
+					<div class="pendingPayment-pay">
+						<p>运费:<span class="pend-number">¥<em>0.00</em></span></p>
+						<p>总金额:<span class="pend-number">¥<em>168.00</em></span></p>
+						<p><select><option>财付通</option><option>微信支付</option></select></p>
+						<p><button type="button" class="pure-button">取消订单</button></p>
+						<!-- <p><input type="button" value="取消订单" class="pure-button"/></p> -->
+						<div class="pendingPayment-payBtn"><input type="submit" value="付款"/ class="pure-button btnBg-orange"></div>
+					</div>	
+				</div>
+				<!-- pendingPayment-box end -->
+				<!-- pendingPayment-lookmore start -->
+				<div id="pendingPayment-lookmore"><a href="#" class="lookMore">查看更多</a></div>
+				<!-- pendingPayment-lookmore end -->
+			</form>
+			<!-- pendingPayment-form end -->
+		</div>
+		<!-- end main -->
+	</div>
+	<!-- end wrap -->
+</body>
+</html>

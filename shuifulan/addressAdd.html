@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="font.css">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/geo.js"></script>
+	<script type="text/javascript" src="js/wx.js"></script>
+	<script type="text/javascript">
+		//这个函数是必须的，因为在geo.js里每次更改地址时会调用此函数 
+		function promptinfo() 
+			{ 
+			var address = document.getElementById('address'); 
+			var s1 = document.getElementById('s1'); 
+			var s2 = document.getElementById('s2'); 
+			var s3 = document.getElementById('s3');
+			address.value = s1.value + s2.value + s3.value; 
+		} 
+	</script>
+</head>
+<body onload="setup();promptinfo();">
+	<!-- start wrap -->
+	<div id="wrap">
+		<!--start header -->
+		<div id="header">
+			<h3 class="detail-title fontColor-orange">添加收货地址</h3>
+			<a class="back" href="javascript:history.go(-1);"><i class="icon-reply"></i><span>返回</span></a>
+		</div>
+		<!-- end header -->
+		<!-- start main -->
+		<div id="main" class="address-box">
+			<!-- addressMg start -->
+			<div id="addressMg-add">
+			<form class="pure-form">
+				<ul>
+					<li class="addressAdd-list">
+						<label>收货人:</label><input type="text"/>
+					</li>
+					<li class="addressAdd-list">
+						<label>手机:</label><input type="text"/>
+					</li>
+					<li class="addressAdd-list">
+						<label>电话:</label><input type="text"/>
+					</li>
+					<li class="addressAdd-list">
+						<label>邮编:</label><input type="text"/>
+					</li>
+					<li class="addressAdd-list">
+						<label>省:</label><select class="select" name="province" id="s1"> 
+			<option></option> 
+		</select> 
+					</li>
+					<li class="addressAdd-list">
+						<label>市:</label><select class="select" name="city" id="s2"> 
+			<option></option> 
+		</select>
+					</li>
+					<li class="addressAdd-list">
+						<label>区:</label><select class="select" name="town" id="s3"> 
+			<option></option> 
+		</select>
+					</li>
+					<li class="addressAdd-list">
+						<label>详细地址:</label><textarea></textarea>
+					</li>
+				</ul>
+				<input id="address" name="address" type="hidden" value="" />
+				<div class="addressAdd-btn"><input class="pure-button btnBg-orange" type="submit" value="确 认"/></div> 
+			</form>
+			</div>
+			<!-- addressMg end -->
+		</div>
+		<!-- end main -->
+	</div>
+	<!-- end wrap -->
+</body>
+</html>

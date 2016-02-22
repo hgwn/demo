@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>详细页</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/carousel.css">
+	<link rel="stylesheet" type="text/css" href="font.css">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/carousel.js"></script>
+	<script type="text/javascript" src="js/lazyload.js"></script>
+	<script type="text/javascript">
+	loadasync("js/wx.js");
+	$(function(){
+		$("#detailImg").owlCarousel({
+			items: 1,
+			autoPlay: true,
+			lazyLoad: true
+		});
+	});
+
+	function loadasync(url){
+		var head = document.getElementsByTagName("head")[0];
+		var s = document.createElement("script");
+		s.src = url;
+		head.appendChild(s);
+	}
+	</script>
+</head>
+<body>
+	<!-- start wrap -->
+	<div id="wrap">
+		<!--start header -->
+		<div id="header">
+			<h3 class="detail-title fontColor-orange">商品详情</h3>
+			<a class="back" href="javascript:history.go(-1);"><i class="icon-reply"></i><span>返回</span></a>
+			<div class="shopCart"><a href="cart.html"><i class="icon-cart"></i><span id="commodity">10</span></a></div>
+		</div>
+		<!-- end header -->
+		<!-- start main -->
+		<div id="main">
+			<!-- start goodsShow -->
+			<div class="goodsShow" style="padding-top:5rem;">
+				<!-- start detailImg -->
+				<div id="detailImg" class="owl-carousel">
+					<a href="#" class="item"><img src="images/detail1.jpg" alt=""></a>
+				    <a href="#" class="item"><img src="images/detail2.jpg" alt=""></a>
+				    <a href="#" class="item"><img src="images/detail3.jpg" alt=""></a>
+				</div>
+				<!-- end detailImg -->
+				<!-- start  detailWrap-->
+				<div class="detailWrap clearfix">
+					<div class="detail-list clearfix">
+						<div class="detail-info"> <h2>商品规格</h2></div>
+						<p>默认规格</p>
+						<form id="detailForm">
+							<div>数量：
+								<span class="ui_number">
+					                <button type="button" class="decrease">-</button>
+					                <input type="text" class="num" value="1"/>
+					                <input type="hidden" class="detail-price" value="168.00"/>
+					                <button type="button" class="increase">+</button>
+				                </span>
+				                <span class="kcun"><span>992</span>件库存</span>
+				            </div>
+						</form>	
+					</div>
+					<div class="detail-list clearfix">
+						<div class="detail-info"> <h2>商品信息</h2></div>
+						<p><img class="lazy" data-original="images/shopinfo1.jpg" src="images/shopinfo1.jpg" alt=""></p>
+						<p><img class="lazy" data-original="images/shopinfo2.jpg" src="images/shopinfo2.jpg" alt=""></p>
+						<p><img class="lazy" data-original="images/shopinfo3.jpg" src="images/shopinfo3.jpg" alt=""></p>
+						<p><img class="lazy" data-original="images/shopinfo4.jpg" src="images/shopinfo4.jpg" alt=""></p>
+						<p><img class="lazy" data-original="images/shopinfo5.jpg" src="images/shopinfo5.jpg" alt=""></p>
+					</div>
+					<div class="detail-list clearfix">
+						<div class="detail-info"> <h2>商品评论(<span>0</span>)</h2></div>
+						<p>暂时还没有评论。</p>
+					</div>
+				</div>
+				<!-- end detailWrap -->
+				<p class="info">&nbsp;</p>
+			</div>
+			<!-- end goodsShow -->
+		</div>
+		<!-- end main -->
+		<!-- start footer -->
+		<div id="detailfooter">
+			<ul class="clearfix">
+				<li><span id="refer_price" class="fontColor-orange"><i>￥</i><span>168.00</span></span></li>
+				<li><a id="add-cart" href="#"><i class="icon-cart"></i><em>加入购物车</em><span class="iconAdd"><i class="icon-plus-circle"></i></span></a></li>
+				<li style="float:right;"><a href="#" class="pay-btn">立即购买</a></li>
+			</ul>
+		</div>
+		<!-- end footer -->
+	</div>
+	<!-- end wrap -->
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript" src="js/AreaInfo.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			showprovinces();
+			tet();
+		}
+		//获取省市区值
+		function tet(){
+			var btn = document.getElementById("btn");
+			btn.onclick=function(){
+				alert(option_text("province")+option_text("citys2")+option_text("citys"));
+				//alert(citys instanceof Object);
+				return false;
+				//document.getElementsByTagName("form")[0].submit();
+			}
+		}
+		
+		//获取每个select中选中的值
+		function option_text(id){
+			var index = document.getElementById(id).selectedIndex;  //selectedIndex代表的是你所选中项的index 
+			if(document.getElementById(id).getElementsByTagName("option")[0]){ //判断是否有option元素
+				//alert("有");
+				var op_text = document.getElementById(id).options[index].text; //拿到选中项options的text
+				return op_text;
+			} else{
+				//alert("无");
+				return "";
+			}
+		}
+		//显示省（自治区、直辖市）
+		function showprovinces()
+		{
+			var opt,provinces_name,provinces_code;
+			for(var i=0; i<provinces.length; i++)  //循环数组 provinces
+			{
+				provinces_name=provinces[i];
+				provinces_code=citys[provinces_name][0]["cityid"];
+				opt = document.createElement("option");
+				opt.value = provinces_code;
+				opt.text = provinces_name;
+				document.getElementById("province").add(opt); //add() 方法用于向 <select> 添加一个 <option> 元素
+			}
+		}
+		function selectdz()
+{
+	var opt;
+	var selectOptions=document.all.citys.options;
+	var i;
+	for(i=selectOptions.length-1;i>=0;i--)
+	{
+		document.all.citys.options.remove(i);
+	}
+	var selectOptions2=document.all.citys2.options;
+	for(i=selectOptions2.length-1;i>=0;i--)
+	{
+		document.all.citys2.options.remove(i);
+	}
+	var province,city_name,city_code;
+	var selectOptions3=document.all.province.options;
+	for(i=selectOptions3.length-1;i>=0;i--)
+	{
+		if(document.all.province.options[i].selected==true)
+		{
+			province=document.all.province.options[i].text;
+		}
+	}
+	for(i=1; i<citys[province].length; i++)
+	{
+		for(var key in citys[province][i])
+		{
+			city_name=citys[province][i][key][0]["cityname"];
+			city_code=citys[province][i][key][0]["cityid"];
+			opt = document.createElement("OPTION");
+			opt.value = city_code;
+			opt.text = city_name;
+			document.getElementById("citys2").add(opt);
+		}
+	}
+	for(var key in citys[province][1])
+	{
+		for(i=1; i<citys[province][1][key].length; i++)
+		{
+			city_name=citys[province][1][key][i]["cityname"];
+			city_code=citys[province][1][key][i]["cityid"];
+			opt = document.createElement("OPTION");
+			opt.value = city_code;
+			opt.text = city_name;
+			document.getElementById("citys").add(opt);
+		}
+	}
+}
+function selectdz2()
+{
+	var opt;
+	var selectOptions=document.all.citys.options;
+	var i;
+	for(i=selectOptions.length-1;i>=0;i--)
+	{
+		document.all.citys.options.remove(i);
+	}
+	var province,cityid,city_name,city_code;
+	var selectOptions2=document.all.province.options;
+	for(i=selectOptions2.length-1;i>=0;i--)
+	{
+		if(document.all.province.options[i].selected==true)
+		{
+			province=document.all.province.options[i].text;
+		}
+	}
+	var selectOptions3=document.all.citys2.options;
+	for(i=selectOptions3.length-1;i>=0;i--)
+	{
+		if(document.all.citys2.options[i].selected==true)
+		{
+			cityid=document.all.citys2.options[i].text;
+		}
+	}
+	var city_name,city_code;
+	for(i=1; i<citys[province].length; i++)
+	{
+		for(var key in citys[province][i])
+		{
+			city_name=citys[province][i][key][0]["cityname"];
+			if(city_name==cityid)
+			{
+				for(var j=1; j<citys[province][i][key].length; j++)
+				{
+					city_name=citys[province][i][key][j]["cityname"];
+					city_code=citys[province][i][key][j]["cityid"];
+					opt = document.createElement("OPTION");
+					opt.value = city_code;
+					opt.text = city_name;
+					document.getElementById("citys").add(opt);
+				}
+			}
+		}
+	}
+}
+	</script>
+	<style type="text/css">
+		#province,#citys,#citys2{width: 180px;}
+	</style>
+</head>
+<body>
+<form>
+	<select id="province" name="province" onchange="selectdz()">
+        <option value="110000">省(自治区、直辖市)</option>
+    </select>
+    <select id="citys2" name="citys2" onchange="selectdz2()">
+        <option value="">地级市</option>
+    </select>
+    <select id="citys" name="citys">
+        <option value="">县(区)</option>
+    </select>
+	<input id="btn" type="submit" value="提交" />
+	<!-- <a id="btn">按钮</a> -->
+</form>	 
+</body>
+</html>

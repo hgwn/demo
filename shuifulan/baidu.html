@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Document</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<!--
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+-->
+	<script type="text/javascript" src="http://passport.baidu.com/js/sitedata_bas.js" charset="GBK"></script> 
+	<script>  
+// $(document).ready(function(){  
+//   // $("#china_cities").text(JSON.stringify(arrCity));  
+//   function keydown(e)
+// 	{
+// 	    var currKey=0,e=e||event;
+// 	     if(e.keyCode==13)
+// 	     {
+// 	         $("#submitBtn").trigger("click");
+// 	     }
+// 	}
+// 	document.onkeydown=keydown;
+
+// 	$("#submitBtn").click(function(){
+// 		//alert(111)
+// 		url = $("#formId").attr("action");
+// 		//alert(url);
+// 		location.href=url;
+// 	});
+// });  
+
+//
+// window.onload = function(){
+// 	var j = 11;
+// 	for(var i =10; i>0; i--){
+// 		(function(i){
+// 			setTimeout(alert(i),1000);
+// 		})(i);
+// 	}
+// }
+
+window.onload=function(){
+	 var lennon = Array("hgwn",2013,false);
+	// var beatles = Array();
+	// beatles[0] = lennon; //数组中的任何一个元素都可以把一个数组作为它的值
+	// beatles[1] = "web";
+	// var name ="li"; //数组元素还可以是变量
+	// beatles[2] = name;
+	//beatles[999] ="设置一个数组index下标为999";
+	//alert(JSON.stringify(beatles));//把对象转化成字符串
+	//alert(beatles[0][0]); //hgwn
+	//alert( beatles.length);  // length值为最大index下标值+1，不管其中是否为null
+	//alert(beatles[998]);  //undefined;
+
+	//关联数组
+	var text = new Array();
+	text["name"] = "hgwndddd";
+	text["year"] = 1988;
+	text["year"] = 1990;
+	text["lear"] = "javaScript";
+	text["text"] = lennon;
+	alert(lennon);
+	//alert(text["text"][1]);
+	//alert(JSON.stringify(lennon));
+	//alert(JSON.stringify(text));
+	//alert(JSON.stringify(text)+":::"+typeof text+"::"+ (text instanceof Array));  //[]  ??
+	for(x in text){
+		alert(x+":"+text[x]);
+	}
+}
+
+</script>
+<style type="text/css">
+	body{font-size: 1.2px;}
+</style>   
+</head>
+<body>
+	http://passport.baidu.com/js/sitedata_bas.js
+	<p id="china_cities"></p>  
+	<form id="formId"  action="http://baidu.com" onsubmit="return false;">
+		<input type="text" value="" name="username"/><br/>
+		<input type="text" value="" name="password"/><br/>
+		<!-- <button>按钮</button> -->
+		<input id="submitBtn" type="submit" value="提交"/>
+		<!-- <input type="button" value="提交2"/> -->
+
+	</form>
+</body>
+</html>

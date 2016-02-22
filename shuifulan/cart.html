@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/carousel.css">
+	<link rel="stylesheet" type="text/css" href="font.css">
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/carousel.js"></script>
+	<script type="text/javascript" src="js/lazyload.js"></script>
+	<script type="text/javascript" src="js/wx.js"></script>
+</head>
+<body>
+	<!-- start wrap -->
+	<div id="wrap">
+		<!--start header -->
+		<div id="header">
+			<h3 class="detail-title fontColor-orange">购物车</h3>
+			<a class="back" href="javascript:history.go(-1);"><i class="icon-reply"></i><span>返回</span></a>
+		</div>
+		<!-- end header -->
+		<!-- start main -->
+		<div id="main">
+			<!-- 购物车为空 -->
+			<div id="cartNull" style="display: none;">
+				<div class="iconCart"><i class="icon-cart"></i></div>
+				<p>购物车还没有宝贝哦，不如去添加宝贝</p>
+				<div class="gotoBuy"><a href="category.html" class="pure-button btnBg-orange">去购物</a></div>
+			</div>
+			<!-- 购物车不为空 -->
+			<!-- start cartContent -->
+			<div id="cartContent" style="display:block;">
+			<form>	
+			<!-- start cart -->
+			<div id="cart">
+				<div class="cartList">
+					<ul class="clearfix">
+						<li class="wd30">
+							<div class="pd5"><img src="images/goods1.jpg" alt=""/></div>
+						</li>
+						<li class="wd65">
+							<p class="cart-name">水肤兰滋养嫩白洁肤乳</p>
+							<p class="cart-price"><em>¥</em><span>168.00</span></p>
+							<p>默认规格</p>
+							<p>数量:
+								<span class="ui_number">
+					                <button type="button" class="decrease">-</button>
+					                <input type="text" class="num" value="1"/>
+					                <input type="hidden" class="subtotal" value="168"/>
+					                <button type="button" class="increase">+</button>
+				                </span>
+							</p>
+						</li>
+						<li class="wd5"><a href="" class="cart-remove"><i class="icon-trash-o"></i></a></li>
+					</ul>
+				</div>
+				<div class="cartList">
+					<ul class="clearfix">
+						<li class="wd30">
+							<div class="pd5"><img src="images/goods1.jpg" alt=""/></div>
+						</li>
+						<li class="wd65">
+							<p class="cart-name">水肤兰滋养嫩白洁肤乳</p>
+							<p class="cart-price"><em>¥</em><span>168.00</span></p>
+							<p>默认规格</p>
+							<p>数量:
+								<span class="ui_number">
+					                <button type="button" class="decrease">-</button>
+					                <input type="text" class="num" value="1"/>
+					                <input type="hidden" class="subtotal" value="168"/>
+					                <button type="button" class="increase">+</button>
+				                </span>
+							</p>
+						</li>
+						<li class="wd5"><a href="" class="cart-remove"><i class="icon-trash-o"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- end cart -->
+			<!-- start cart-box -->
+			<div class="cart-box">
+				<span class="wd20">支付:</span>
+				<button type="button" class="pure-button btnBg-orange">财付通</button>
+				<button type="button" class="pure-button">微信支付</button>
+			</div>
+			<!-- end cart-box -->
+			<div class="cart-box">
+				<span class="wd20">优惠:</span>
+				<select id="">
+		            <option>不使用</option>
+		            <option>微信卡券</option>
+		            <option>微商户卡券</option>
+		            <option>优惠券/红包</option>
+		        </select>
+			</div>
+			<div class="cart-box">
+				<span class="wd20">留言:</span>
+				<textarea class="wd70" placeholder="请输入您的留言..."></textarea>
+			</div>
+			<div class="cart-box">
+				<div class="cart-order">
+					<h3 class="cart-title">结算信息</h3>
+					<p>商品金额<span class="txtr"><b id="cart_goods_amount">236.00</b><em>元</em></span></p>
+					<p>应付金额<span class="txtr"><b id="cart_goods_pay">236.00</b><em>元</em></span></p>
+				</div>
+			</div>
+			<div id="cart-bottom">
+				<div class="cart-priceTotal">￥<span>236.00</span></div>
+				<div class="fr wd50">
+					<a href="pay.html" class="cartorder-btn">提交订单</a>
+				</div>	
+			</div>
+		</form>	
+		</div>
+		<!-- end cartContent -->
+		</div>
+		<!-- end main -->
+		<!-- start footer -->
+		<div id="footer">
+			<ul class="clearfix">
+				<li><a class="Footlinks" href="index.html"><i class="icon-home"></i>首页</a></li>
+				<li><a class="Footlinks" href="category.html"><i class="icon-grid"></i>商品</a></li>
+				<li><a class="Footlinks active" href="#"><i class="icon-cart"></i>购物车</a></li>
+				<li><a class="Footlinks" href="individual.html"><i class="icon-user"></i>我</a></li>
+				<li><a class="Footlinks" href="activity.html"><i class="icon-gift"></i>惊喜</a></li>
+			</ul>
+		</div>
+		<!-- end footer -->
+	</div>
+	<!-- end wrap -->
+</body>
+</html>
