@@ -1,4 +1,4 @@
-learn git~~~
+learn git~~~now
 Git基本常用命令如下：
 
    mkdir：         XX (创建一个空目录 XX指目录名)
