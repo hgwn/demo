@@ -1,0 +1,59 @@
+<!--pages/info.wxml-->
+<view class='info_container'>
+  <view class='qrcode' bindtap='toggleArr'>
+    <image class='qrcode_icon' src='../images/twm.png'></image>
+    <span>店铺二维码</span>
+    <span class="{{ isexp ? 'arrow_top' : 'arrow_bottom' }}"></span>
+  </view>
+  <view class='qrcode_bg' hidden='{{ isShow }}'>
+    <canvas class='qrcode_bottom' style="width: 250px; height: 250px;" canvas-id="myQrcode"></canvas>
+  </view>
+  <view class='info_detail' bindtap='toggleArr2'>
+    <image class='qrcode_icon' src='../images/dianzicheng.png'></image>
+    <text>{{ info.retailMarket.showName }}</text>
+    <span class="{{ isexp2 ? 'arrow_top' : 'arrow_bottom' }}"></span>
+  </view>
+  <view class='info_detail_bottom' hidden='{{isShow2}}'>
+    <view class='info_detail_item'>
+      <label>档口名称：</label>
+      <text class='info_detail_txt'>{{info.booth.boothDesc}}</text>
+    </view>
+    <view class='info_detail_item'>
+      <label>档口编号：</label>
+      <text class='info_detail_txt'>{{info.booth.boothId}}</text>
+    </view>
+    <view class='info_detail_item'>
+      <label>所属档主：</label>
+      <text class='info_detail_txt'>{{info.vendor.vendorName}}</text>
+    </view>
+    <view class='info_detail_item'>
+      <label>联系电话：</label>
+      <text class='info_detail_txt'>{{info.vendor.phone}}</text>
+    </view>
+    <view class='info_detail_item'>
+      <label>营业执照：</label>
+      <text class='info_detail_txt'>{{info.vendor.identifyId}}</text>
+    </view>
+  </view>
+  <view class='qrcode qrpublic'>
+    <image class='qrcode_icon' src='../images/list.png'></image>
+    <span>档口溯源公示</span>
+  </view>
+  <view class='info_list' wx:for="{{shopList}}" wx:for-index="idx">
+    <image class='info_list_img' src='{{ api + "/image/good/" + item.pic }}'></image>
+    <view class='info_list_item'>
+      <view class='info_list_txt'>
+        <label>菜品：</label>
+        <text>{{item.in_good_name}}</text>
+      </view>
+      <view class='info_list_txt'>
+        <label>批发市场：</label>
+        <text>{{item.terminal_market_name}}</text>
+      </view>
+      <view class='info_list_txt'>
+        <label>进货日期：</label>
+        <text>{{item.in_market_datetime}}</text>
+      </view>
+    </view>
+  </view>
+</view>

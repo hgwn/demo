@@ -1,0 +1,14 @@
+<!--shopsList.wxml-->
+<!-- 进货列表 -->
+<view class='stockList' >
+  <view class='stockList_container'>
+    <view wx:if="{{stockList.length != 0}}" class='stockList_item' wx:for="{{stockList}}" wx:for-index="index" wx:key='{{index}}'>
+      <text class='stockList_name'>{{ stockList[index].in_good_name }}</text>
+      <text class='stockList_price'>{{ stockList[index].price }}元/公斤</text>
+      <button class='quick_entry' bindtap='quickEntry' data-inId="{{stockList[index].in_id}}">快速录入</button>
+    </view>
+    <view class='noData' wx:if="{{stockList.length==0}}">暂无数据</view>
+    <button bindtap='goInfo'>溯源信息</button>
+  </view>
+  <button class='addStock' bindtap='goAddStock'>新增进货单</button>
+</view>

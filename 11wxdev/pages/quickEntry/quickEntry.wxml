@@ -1,0 +1,87 @@
+<!-- 快速录入 -->
+<view>
+  <view class='shops_item picker'>
+    <picker class='shops_item_picker' bindchange="bindPickerChangeShops" value="{{index1}}" range="{{shops}}">
+      <view class="picker">
+        <text class='labelName'>商品</text>
+        <text class='labeValue'>{{shops[index1]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class='shops_item'>
+    <picker class='shops_item_picker' bindchange="bindPickerChangeShopsList" value="{{index2}}" range="{{shopsList}}">
+      <view class="picker">
+      <text class='labelName'>批发市场</text>
+        <text class='labeValue'>{{shopsList[index2]}}</text>
+      </view>
+    </picker>
+  </view>
+  <view class='shops_item'>
+    <text class='weight'>重量(公斤)</text>
+    <input class='weight_num' type='number' placeholder='请输入' bindinput='getWeight' value='{{weight}}'/>
+  </view>
+  <view class='shops_item'>
+    <text class='weight'>单价(元/公斤)</text>
+    <input class='weight_num' type='number' placeholder='请输入' bindinput='getPrice' value='{{price}}'/>
+  </view>
+  <view class='shops_item'>
+     <picker class='shops_item_picker' mode="date" value="{{date}}" bindchange="bindDateChange">
+    <view class="picker">
+        <text class='labelName'>进货日期</text>
+        <text class='labeValue'>{{date}}</text>
+    </view>
+  </picker>
+  </view>
+  <view>
+    <p class='shops_bottom' bindtap="toggleArr">设置更多信息 <span class="{{ isexp ? 'arrow_top' : 'arrow_bottom' }}"></span></p>
+    <view hidden='{{ isShow }}'>
+      <view class='shops_item'>
+        <text class='weight'>批发商名称</text>
+        <input class='weight_num' type='text' placeholder='请输入' bindinput='getStoreName'/>
+      </view>
+      <view class='shops_item'>
+        <text class='weight'>交易凭证号</text>
+        <input class='weight_num' type='number' placeholder='请输入'/>
+      </view>
+      <view class='shops_item'>
+        <text class='weight'>进货批发号</text>
+        <input class='weight_num' type='number' placeholder='请输入' bindinput='getStoreNumber'/>
+      </view>
+      <!-- <view class='shops_item'>
+        <picker class='shops_item_picker' bindchange="bindPickerChangeShopsType" value="{{index3}}" range="{{shopsType}}">
+          <view class="picker">
+            <text class='labelName'>进货类型</text>
+            <text class='labeValue'>{{shopsType[index3]}}</text>
+          </view>
+        </picker>
+      </view> -->
+      <view class='shops_item'>
+        <picker class='shops_item_picker' mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <view class="picker">
+              <text class='labelName'>产地(省/市/区)</text>
+              <text class='labeValue'>{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+            </view>
+          </picker>
+
+           <!-- <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+              <view class="picker">
+                当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+              </view>
+            </picker> -->
+      </view>
+      <view class='shops_item'>
+        <text class='weight'>产地名称</text>
+        <input class='weight_num' type='text' placeholder='请输入' bindinput='getProduceAreaName'/>
+      </view>
+      <view class='shops_item'>
+        <text class='weight'>生产基地</text>
+        <input class='weight_num' type='text' placeholder='请输入' bindinput='getProduceBase'/>
+      </view>
+      <view class='shops_item'>
+        <text class='weight'>运输车牌号</text>
+        <input class='weight_num' type='text' placeholder='请输入' bindinput='getTransportCarNum'/>
+      </view>
+    </view>
+  </view>
+  <button class='sendBtn' bindtap='sendBtn'>提交</button>
+</view>

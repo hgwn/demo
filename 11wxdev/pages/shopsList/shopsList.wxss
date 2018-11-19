@@ -1,0 +1,40 @@
+/**shopsList.wxss**/
+.stockList{
+  
+}
+.stockList_container{
+  padding-bottom: 50px;
+}
+.stockList_item{
+  padding: 30rpx;
+  display: flex;
+  border-bottom: 1px solid #E7E7E8;
+}
+.stockList_name{
+  width: 33%;
+  flex: 1;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.stockList_price{
+  flex: 1;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.quick_entry{
+  color: #4CD386;
+  font-size: 30rpx;
+  background-color: #fff;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.addStock{
+  background-color: #4CD386;
+  position: fixed;
+  bottom: 0;
+  width:100%;
+  color: #fff;
+}
+.noData{
+  text-align: center
+}

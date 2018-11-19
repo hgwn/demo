@@ -1,0 +1,22 @@
+<!--pages/login/login.wxml-->
+<view>
+  <view class='login_container'>
+    <image class='login_bg' src='../images/index-header-bg.png'></image>
+    <view class='login_bg_title'>
+      <p class='login_title'>广州市肉类蔬菜流通追溯体系</p>
+      <p class='login_text'>高效 / 敏捷 / 智慧 / 安全</p>
+    </view>
+    <image class='logo' src='../images/logo.png'></image>
+  </view>
+  <view class='login_bottom'>
+    <view class='login_acc'>
+      <span class="iconfont icon-zhanghao "></span>
+      <input class='login_account' type='number' placeholder='请输入手机号码' bindinput='usePhone'></input>
+    </view>
+      <view class='login_acc'>
+      <span class="iconfont icon-mima "></span>
+      <input class='login_account' type='password' placeholder='请输入密码' bindinput='usePSW'></input>
+    </view>
+    <button class='loginBtn' bindtap='loginBtn'>登录</button>
+  </view>
+</view>
