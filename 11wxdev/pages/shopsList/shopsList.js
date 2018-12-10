@@ -62,5 +62,11 @@ Page({
     wx.navigateTo({
       url: '../info/info',
     })
+  },
+  // 点击跳转reto溯源信息
+  goReto() {
+    wx.navigateTo({
+      url: '../reto/reto',
+    })
   }
 })

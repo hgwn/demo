@@ -1,0 +1,64 @@
+<!--pages/reto/reto.wxml-->
+<view class='reto_container'>
+<!-- 菜市场列表 -->
+  <view class='qrcode' bindtap='toggleArr'>
+    <image class='qrcode_icon' src='../images/dianzicheng.png'></image>
+    <span>雄州智慧肉菜市场</span>
+    <span class="{{ isexp ? 'arrow_top' : 'arrow_bottom' }}"></span>
+  </view>
+  <view class='info_detail_bottom' hidden='{{isShow}}'>
+    <view class='info_detail_item'>
+      <label>档口编号：</label>
+      <text class='info_detail_txt'>999</text>
+    </view>
+    <view class='info_detail_item'>
+      <label>档口名称：</label>
+      <text class='info_detail_txt'>张三</text>
+    </view>
+    <view class='info_detail_item'>
+      <label>档主电话：</label>
+      <text class='info_detail_txt'>189****9595</text>
+    </view>
+    <view class='info_detail_item'>
+      <label>交易日期：</label>
+      <text class='info_detail_txt'>2018-11-01 16:43:38</text>
+    </view>
+    <view class='info_detail_item'>
+      <label>商品名称：</label>
+      <text class='info_detail_txt'>五花肉</text>
+    </view>
+    <view class='info_detail_item'>
+      <label>重量：</label>
+      <text class='info_detail_txt'>0.37公斤</text>
+    </view>
+    <view class='info_detail_item'>
+      <label>单价：</label>
+      <text class='info_detail_txt'>32元/公斤</text>
+    </view>
+    <view class='info_detail_item info_detail_item_last'>
+      <label>总金额：</label>
+      <text class='info_detail_txt'>11.84元</text>
+    </view>
+  </view>
+
+<!-- 批发市场 -->
+  <view class='qrcode' bindtap='toggleArr2'>
+    <image class='qrcode_icon' src='../images/dianzicheng.png'></image>
+    <span>批发市场</span>
+    <span class="{{ isexp2 ? 'arrow_top' : 'arrow_bottom' }}"></span>
+  </view>
+  <view class='info_detail_bottom' hidden='{{isShow2}}'>
+    <view class='info_detail_item'>
+      <label>批次号：</label>
+      <text class='info_detail_txt'>4401110030019122</text>
+    </view>
+    <view class='info_detail_item'>
+      <label>批发市场名称：</label>
+      <text class='info_detail_txt'>雅瑶屠宰场</text>
+    </view>
+    <view class='info_detail_item'>
+      <label>批发商名称：</label>
+      <text class='info_detail_txt'>一号土猪</text>
+    </view>
+  </view>
+</view>

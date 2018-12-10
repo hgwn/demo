@@ -9,6 +9,7 @@
     </view>
     <view class='noData' wx:if="{{stockList.length==0}}">暂无数据</view>
     <button bindtap='goInfo'>溯源信息</button>
+    <button bindtap='goReto'>溯源信息reto</button>
   </view>
   <button class='addStock' bindtap='goAddStock'>新增进货单</button>
 </view>

@@ -123,9 +123,9 @@ Page({
               icon: 'none',
             })
 
-            wx.navigateTo({
-              url: '../shopsList/shopsList',
-            })
+            // wx.navigateTo({
+            //   url: '../shopsList/shopsList',
+            // })
           }
         }
       })

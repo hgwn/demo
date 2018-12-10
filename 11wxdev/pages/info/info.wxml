@@ -6,7 +6,7 @@
     <span class="{{ isexp ? 'arrow_top' : 'arrow_bottom' }}"></span>
   </view>
   <view class='qrcode_bg' hidden='{{ isShow }}'>
-    <canvas class='qrcode_bottom' style="width: 250px; height: 250px;" canvas-id="myQrcode"></canvas>
+    <canvas class='qrcode_bottom' style="width: 200px; height: 200px;" canvas-id="myQrcode"></canvas>
   </view>
   <view class='info_detail' bindtap='toggleArr2'>
     <image class='qrcode_icon' src='../images/dianzicheng.png'></image>

@@ -1,0 +1,66 @@
+/* pages/reto/reto.wxss */
+.reto_container{
+  background-color: #F7F7F9
+}
+.arrow_top{
+  display: inline-block;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  width: 20rpx;
+  height: 20rpx;
+  border-color: #808080;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 50%;
+  right: 80rpx;
+  margin-top: -10rpx;
+}
+.arrow_bottom{
+  display: inline-block;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  width: 20rpx;
+  height: 20rpx;
+  border-color: #808080;
+  transform: rotate(135deg);
+  position: absolute;
+  top: 50%;
+  right: 80rpx;
+  margin-top: -20rpx;
+}
+.qrcode{
+  height: 80rpx;
+  line-height: 80rpx;
+  width:100%;
+  display:block;
+  padding-left:30rpx;
+  background-color:#fff;
+  /* margin:20rpx 0; */
+  position:relative;
+}
+.qrcode_icon{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align:middle;
+  margin-right: 20rpx;
+}
+.info_detail_bottom{
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+.info_detail_item{
+  display: block;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 1px solid #DDDDE0;
+  margin-left: 90rpx;
+  color: #838383;
+  font-size: 13px;
+}
+.info_detail_item_last{
+  border-bottom: none;
+}
+.info_detail_txt{
+  color: #000;
+}

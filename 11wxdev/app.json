@@ -3,7 +3,8 @@
     "pages/login/login",
     "pages/shopsList/shopsList",
     "pages/quickEntry/quickEntry",
-    "pages/info/info"
+    "pages/info/info",
+    "pages/reto/reto"
   ],
   "window": {
     "backgroundTextStyle": "light",
