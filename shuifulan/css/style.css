@@ -578,7 +578,7 @@ a.pay-addressEdit i.icon-edit{color:#999; font-size: 2.6rem;}
 .disp-table{display: table;}
 .member-info .wd30{ padding: 15px;}
 .member-info .wd30,.member-info dl{display: table-cell;}
-.member-info .wd30 img{max-width:150px; height: auto; display: block; border-radius: 50%; border:2px solid #fff;}
+.member-info .wd30 img{max-width:100px; height: auto; display: block; border-radius: 50%; border:2px solid #fff;}
 .member-info dl{ padding-left: 15px; vertical-align: middle; color: #666;}
 .member-info dt,.member-info dd{line-height: 1.8em; color:#333;}
 .member-info dt{font-weight: bold; font-size: 1.5rem;}
